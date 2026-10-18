@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html.font-size-normal {
+    font-size: 16px;
+  }
+  html.font-size-large {
+    font-size: 18.5px;
+  }
+  html.font-size-xlarge {
+    font-size: 21px;
+  }
+
+  body {
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Archivo Black', 'Prompt', sans-serif;
+  }
+
+  code, pre, .font-code {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Avoid unreadable tiny fonts across all zoom levels */
+.text-\[10px\] {
+  font-size: 0.75rem !important;
+}
+.text-\[11px\] {
+  font-size: 0.82rem !important;
+}
+
+/* Light Theme (Default & Primary Mode requested by user) */
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#0a0a0c\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#121216\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) .bg-\[\#17171c\] {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+html:not(.dark) .bg-\[\#0e0e12\] {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+html:not(.dark) .bg-\[\#16161c\] {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+html:not(.dark) .bg-\[\#1a1a22\],
+html:not(.dark) .bg-\[\#1a1a24\],
+html:not(.dark) .bg-\[\#1f1f26\],
+html:not(.dark) .bg-\[\#1f1f27\] {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#101014\] {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .border-\[\#27272f\] {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .border-\[\#2e2e38\] {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-\[\#383842\] {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-gray-200,
+html:not(.dark) .text-gray-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-gray-400 {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-gray-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .prose-invert {
+  color: #334155 !important;
+}
+
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) header .bg-\[\#121216\] {
+  background-color: #f8fafc !important;
+  border-bottom-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+html:not(.dark) header nav button.bg-\[\#121216\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) header nav button.bg-\[\#121216\]:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) footer {
+  background-color: #f1f5f9 !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+html:not(.dark) input[type="text"],
+html:not(.dark) input[type="number"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .from-\[\#17171c\] {
+  --tw-gradient-from: #ffffff !important;
+}
+
+html:not(.dark) .to-\[\#0e0e12\],
+html:not(.dark) .to-\[\#101014\],
+html:not(.dark) .to-\[\#121216\] {
+  --tw-gradient-to: #f8fafc !important;
+}
+
+html:not(.dark) .divide-\[\#27272f\]\/40 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .katex {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-cyan-300,
+html:not(.dark) .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+html:not(.dark) .text-purple-300,
+html:not(.dark) .text-purple-400 {
+  color: #7c3aed !important;
+}
+
+html:not(.dark) .text-amber-300,
+html:not(.dark) .text-amber-400 {
+  color: #b45309 !important;
+}
+
+html:not(.dark) .text-emerald-300,
+html:not(.dark) .text-emerald-400 {
+  color: #047857 !important;
+}
+
+/* Dark Theme overrides when .dark is present */
+html.dark body {
+  background-color: #0a0a0c !important;
+  color: #f4f4f5 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0e0e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Badge & Voicebox Typography */
+.badge-mono {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 0 20px -3px rgba(147, 51, 234, 0.25);
+}
+
+/* KaTeX formula font adjustments & high-contrast visibility */
+.katex {
+  font-size: 1.16em !important;
+  text-rendering: geometricPrecision;
+}
+.katex-display {
+  margin: 0.85em 0 !important;
+}
+.katex-display > .katex {
+  font-size: 1.25em !important;
+}
+
+/* Ensure math formulas in Light mode are bold, deep navy/black and NOT washed-out */
+html:not(.dark) .katex,
+html:not(.dark) .katex-display,
+html:not(.dark) .katex .mord,
+html:not(.dark) .katex .mbin,
+html:not(.dark) .katex .mrel,
+html:not(.dark) .katex .mop {
+  color: #0f172a !important;
+}
+
+/* Math formulas in Dark mode */
+html.dark .katex,
+html.dark .katex-display,
+html.dark .katex .mord,
+html.dark .katex .mbin,
+html.dark .katex .mrel,
+html.dark .katex .mop {
+  color: #f8fafc !important;
+}
+
