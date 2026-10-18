@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  Printer, 
-  Copy, 
-  Check, 
-  Search, 
-  FileText, 
-  Sparkles, 
-  Layers, 
+import {
+  Printer,
+  Copy,
+  Check,
+  Search,
+  FileText,
+  Sparkles,
+  Layers,
   Info
 } from 'lucide-react';
 import MathText from './MathText';
@@ -43,7 +43,7 @@ export default function CheatSheetA4Tab() {
       `   - Semi-Supervised, Reinforcement Learning (Agent, Env, State, Action, Reward, Policy)\n` +
       `   - Data Mining KDD: Cleaning -> Integration -> Selection -> Transformation -> Mining -> Evaluation -> Presentation\n` +
       `5. EXPERT SYSTEMS: Rule-Based (Forward vs Backward Chaining), Fuzzy (Membership degree, Defuzzification COG), Case-Based Reasoning (4R: Retrieve, Reuse, Revise, Retain), Deterministic vs Probabilistic (CF), Static vs Dynamic, Knowledge Acquisition & Bottleneck.`;
-    
+
     navigator.clipboard.writeText(textContent);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -96,33 +96,30 @@ export default function CheatSheetA4Tab() {
           <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#1a1a22] p-1 rounded-xl w-full sm:w-auto">
             <button
               onClick={() => { sound.playClick(); setViewMode('both'); }}
-              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${
-                viewMode === 'both'
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${viewMode === 'both'
                   ? 'bg-white dark:bg-[#252530] text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-gray-400 hover:text-slate-900'
-              }`}
+                }`}
             >
               <Layers className="w-3.5 h-3.5 text-red-500" />
               <span>ดูทั้ง 2 หน้า (หน้า-หลัง)</span>
             </button>
             <button
               onClick={() => { sound.playClick(); setViewMode('p1'); }}
-              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${
-                viewMode === 'p1'
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${viewMode === 'p1'
                   ? 'bg-white dark:bg-[#252530] text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-gray-400 hover:text-slate-900'
-              }`}
+                }`}
             >
               <FileText className="w-3.5 h-3.5 text-blue-500" />
               <span>หน้า 1 (ด้านหน้า)</span>
             </button>
             <button
               onClick={() => { sound.playClick(); setViewMode('p2'); }}
-              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${
-                viewMode === 'p2'
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${viewMode === 'p2'
                   ? 'bg-white dark:bg-[#252530] text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-gray-400 hover:text-slate-900'
-              }`}
+                }`}
             >
               <FileText className="w-3.5 h-3.5 text-purple-500" />
               <span>หน้า 2 (ด้านหลัง)</span>
@@ -155,14 +152,14 @@ export default function CheatSheetA4Tab() {
           PRINTABLE A4 PAGES CONTAINER
           ========================================================================= */}
       <div className="print-container flex flex-col items-center gap-8">
-        
+
         {/* =======================================================================
             PAGE 1: ด้านหน้า (Front Side)
             Topics: Pattern Recognition, Robotics & Languages, Image Processing
             ======================================================================= */}
         {(viewMode === 'both' || viewMode === 'p1') && (
           <div className="a4-page bg-white text-slate-950 rounded-2xl shadow-xl border border-slate-300 dark:border-slate-700 p-4 sm:p-5 max-w-[210mm] w-full text-[11px] leading-[1.3] font-sans">
-            
+
             {/* Page Header */}
             <div className="border-b-2 border-slate-900 pb-1.5 mb-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -180,7 +177,7 @@ export default function CheatSheetA4Tab() {
 
             {/* 3-Column Grid for Page 1 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-              
+
               {/* COLUMN 1: PATTERN RECOGNITION */}
               <div className="space-y-1.5">
                 <div className="bg-red-50 border border-red-300 rounded-md p-1.5">
@@ -420,7 +417,7 @@ export default function CheatSheetA4Tab() {
             ======================================================================= */}
         {(viewMode === 'both' || viewMode === 'p2') && (
           <div className="a4-page bg-white text-slate-950 rounded-2xl shadow-xl border border-slate-300 dark:border-slate-700 p-4 sm:p-5 max-w-[210mm] w-full text-[11px] leading-[1.3] font-sans">
-            
+
             {/* Page Header */}
             <div className="border-b-2 border-slate-900 pb-1.5 mb-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -438,7 +435,7 @@ export default function CheatSheetA4Tab() {
 
             {/* 2-Column Grid for Page 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              
+
               {/* COLUMN 1: NEURAL NETWORKS & DEEP LEARNING */}
               <div className="space-y-1.5">
                 <div className="bg-purple-50 border border-purple-300 rounded-md p-1.5">

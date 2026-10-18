@@ -6,9 +6,11 @@
   html.font-size-normal {
     font-size: 16px;
   }
+
   html.font-size-large {
     font-size: 18.5px;
   }
+
   html.font-size-xlarge {
     font-size: 21px;
   }
@@ -19,11 +21,16 @@
     letter-spacing: 0.01em;
   }
 
-  h1, h2, h3, .font-heading {
+  h1,
+  h2,
+  h3,
+  .font-heading {
     font-family: 'Archivo Black', 'Prompt', sans-serif;
   }
 
-  code, pre, .font-code {
+  code,
+  pre,
+  .font-code {
     font-family: 'Space Mono', monospace;
   }
 }
@@ -32,6 +39,7 @@
 .text-\[10px\] {
   font-size: 0.75rem !important;
 }
+
 .text-\[11px\] {
   font-size: 0.82rem !important;
 }
@@ -158,7 +166,7 @@ html:not(.dark) .to-\[\#121216\] {
   --tw-gradient-to: #f8fafc !important;
 }
 
-html:not(.dark) .divide-\[\#27272f\]\/40 > :not([hidden]) ~ :not([hidden]) {
+html:not(.dark) .divide-\[\#27272f\]\/40> :not([hidden])~ :not([hidden]) {
   border-color: #e2e8f0 !important;
 }
 
@@ -197,19 +205,24 @@ html.dark body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 html.dark ::-webkit-scrollbar-track {
   background: #0e0e12;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
+
 html.dark ::-webkit-scrollbar-thumb {
   background: #27272f;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #ef4444;
 }
@@ -231,10 +244,12 @@ html.dark ::-webkit-scrollbar-thumb {
   font-size: 1.16em !important;
   text-rendering: geometricPrecision;
 }
+
 .katex-display {
   margin: 0.85em 0 !important;
 }
-.katex-display > .katex {
+
+.katex-display>.katex {
   font-size: 1.25em !important;
 }
 
@@ -267,7 +282,8 @@ html.dark .katex .mop {
     margin: 5mm 5mm 5mm 5mm;
   }
 
-  html, body {
+  html,
+  body {
     background: #ffffff !important;
     color: #09090b !important;
     font-size: 8pt !important;
@@ -277,7 +293,12 @@ html.dark .katex .mop {
   }
 
   /* Hide app navigation, headers, footers and interactive controls */
-  header, footer, nav, .no-print, button, input {
+  header,
+  footer,
+  nav,
+  .no-print,
+  button,
+  input {
     display: none !important;
   }
 
@@ -336,4 +357,3 @@ html.dark .katex .mop {
     color: #000000 !important;
   }
 }
-
