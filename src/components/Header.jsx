@@ -13,7 +13,8 @@ import {
   Cpu,
   Sun,
   Moon,
-  Type
+  Type,
+  Printer
 } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 
@@ -31,11 +32,12 @@ export default function Header({
 }) {
   const navTabs = [
     { id: 'overview', label: 'ภาพรวมวิชา', sub: 'Overview', icon: Compass },
+    { id: 'cheatsheet', label: 'ใบจดสรุป A4', sub: 'A4 Cheat Sheet (หน้า-หลัง)', icon: Printer, badge: 'A4 EXAM', highlight: true },
     { id: 'lessons', label: 'ทฤษฎี & สูตร', sub: 'Lessons & Theory', icon: BookOpen },
     { id: 'neural', label: 'แล็บ Backprop', sub: 'Neural Node Lab', icon: Cpu, badge: 'HOT' },
     { id: 'calculators', label: 'ห้องทดลองสูตร', sub: 'Calculators Lab', icon: Calculator },
     { id: 'quizzes', label: 'แบบฝึกหัดย่อย', sub: 'Unit Quizzes', icon: HelpCircle },
-    { id: 'exam', label: 'ข้อสอบปลายภาค (75 ข้อ)', sub: 'Final Exam 75 Qs', icon: FileCheck2, highlight: true },
+    { id: 'exam', label: 'ข้อสอบปลายภาค (75 ข้อ)', sub: 'Final Exam 75 Qs', icon: FileCheck2 },
   ];
 
   const handleTabClick = (tabId) => {

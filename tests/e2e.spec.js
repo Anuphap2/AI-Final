@@ -10,7 +10,7 @@ test.describe('AI Final Review & Exam Suite - Comprehensive E2E Tests', () => {
     await expect(page.locator('text=AI MASTERY').first()).toBeVisible();
 
     // Check all main tabs are present
-    const tabs = ['ภาพรวมวิชา', 'ทฤษฎี & สูตร', 'แล็บ Backprop', 'ห้องทดลองสูตร', 'แบบฝึกหัดย่อย', 'ข้อสอบปลายภาค (75 ข้อ)'];
+    const tabs = ['ภาพรวมวิชา', 'ใบจดสรุป A4', 'ทฤษฎี & สูตร', 'แล็บ Backprop', 'ห้องทดลองสูตร', 'แบบฝึกหัดย่อย', 'ข้อสอบปลายภาค (75 ข้อ)'];
     for (const tab of tabs) {
       await expect(page.locator(`nav button:has-text("${tab}")`)).toBeVisible();
     }
@@ -299,6 +299,38 @@ test.describe('AI Final Review & Exam Suite - Comprehensive E2E Tests', () => {
 
     // Confirm it jumped to Question 11
     await expect(page.locator('text=ข้อ 11 จาก 75')).toBeVisible();
+  });
+
+  test('10. A4 Printable Cheat Sheet (1 Sheet Front & Back)', async ({ page }) => {
+    await page.goto('/');
+
+    // Click on A4 Cheat Sheet tab
+    await page.click('nav button:has-text("ใบจดสรุป A4")');
+
+    // Verify title and page layout
+    await expect(page.locator('text=ใบจดสรุป 1 แผ่น A4 หน้า-หลัง').first()).toBeVisible();
+    await expect(page.locator('text=1 A4 SHEET (FRONT)')).toBeVisible();
+    await expect(page.locator('text=1 A4 SHEET (BACK)')).toBeVisible();
+
+    // Verify key topics from instructor prompt are present
+    await expect(page.locator('text=1. การรู้จำแบบ (Pattern Recognition)').first()).toBeVisible();
+    await expect(page.locator('text=2. วิทยาการหุ่นยนต์ (Robotics)').first()).toBeVisible();
+    await expect(page.locator('text=Additive RGB vs Subtractive CMYK').first()).toBeVisible();
+    await expect(page.locator('text=Sigmoid (S-Curve)').first()).toBeVisible();
+    await expect(page.locator('text=ReLU').first()).toBeVisible();
+    await expect(page.locator('text=Softmax').first()).toBeVisible();
+    await expect(page.locator('text=Fuzzy Expert System').first()).toBeVisible();
+    await expect(page.locator('text=Case-Based Reasoning').first()).toBeVisible();
+    await expect(page.locator('text=Knowledge Acquisition').first()).toBeVisible();
+
+    // Test toggle view mode
+    await page.click('button:has-text("หน้า 1 (ด้านหน้า)")');
+    await expect(page.locator('text=1 A4 SHEET (FRONT)')).toBeVisible();
+    await expect(page.locator('text=1 A4 SHEET (BACK)')).not.toBeVisible();
+
+    await page.click('button:has-text("หน้า 2 (ด้านหลัง)")');
+    await expect(page.locator('text=1 A4 SHEET (BACK)')).toBeVisible();
+    await expect(page.locator('text=1 A4 SHEET (FRONT)')).not.toBeVisible();
   });
 
 });

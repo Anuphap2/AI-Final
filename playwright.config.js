@@ -8,6 +8,11 @@ export default defineConfig({
   },
   fullyParallel: true,
   reporter: 'list',
+  webServer: {
+    command: 'npm.cmd run dev',
+    port: 3000,
+    reuseExistingServer: true,
+  },
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',

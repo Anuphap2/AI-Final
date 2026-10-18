@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import OverviewTab from './components/OverviewTab';
+import CheatSheetA4Tab from './components/CheatSheetA4Tab';
 import LessonsTab from './components/LessonsTab';
 import CalculatorsTab from './components/CalculatorsTab';
 import NeuralNetworkTrainer from './components/NeuralNetworkTrainer';
@@ -95,6 +96,10 @@ export default function App() {
             setActiveTab={setActiveTab} 
             setSelectedUnit={setSelectedUnit} 
           />
+        )}
+
+        {activeTab === 'cheatsheet' && (
+          <CheatSheetA4Tab />
         )}
 
         {activeTab === 'lessons' && (

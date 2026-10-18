@@ -258,3 +258,82 @@ html.dark .katex .mop {
   color: #f8fafc !important;
 }
 
+/* ==========================================================================
+   A4 Cheat Sheet Print Styles (Strict 2-Page Front & Back)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 5mm 5mm 5mm 5mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #09090b !important;
+    font-size: 8pt !important;
+    line-height: 1.25 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide app navigation, headers, footers and interactive controls */
+  header, footer, nav, .no-print, button, input {
+    display: none !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a4-page {
+    width: 100% !important;
+    min-height: 285mm !important;
+    max-height: 287mm !important;
+    box-shadow: none !important;
+    border: 1px solid #94a3b8 !important;
+    padding: 5mm !important;
+    margin: 0 0 0 0 !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* Make sure background tints and borders print crisply */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .a4-page .bg-slate-50,
+  .a4-page .bg-slate-100,
+  .a4-page .bg-red-50,
+  .a4-page .bg-blue-50,
+  .a4-page .bg-amber-50,
+  .a4-page .bg-emerald-50,
+  .a4-page .bg-purple-50 {
+    background-color: #f8fafc !important;
+  }
+
+  .a4-page .katex {
+    font-size: 0.9em !important;
+    color: #000000 !important;
+  }
+}
+

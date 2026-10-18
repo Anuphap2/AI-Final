@@ -12,7 +12,8 @@ import {
   Network, 
   Boxes, 
   Flame,
-  Award
+  Award,
+  Printer
 } from 'lucide-react';
 import { lessonsData } from '../data/lessonsData';
 import { sound } from '../utils/soundEffects';
@@ -80,6 +81,16 @@ export default function OverviewTab({ setActiveTab, setSelectedUnit }) {
             >
               <Calculator className="w-4 h-4 text-red-400" />
               <span>ห้องทดลองคำนวณสูตร</span>
+            </button>
+            <button
+              onClick={() => {
+                sound.playClick();
+                setActiveTab('cheatsheet');
+              }}
+              className="flex items-center gap-2 px-5 py-3 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 font-sans text-sm font-bold transition shadow-xs"
+            >
+              <Printer className="w-4 h-4 text-amber-400" />
+              <span>ใบจดสรุป 1 A4 หน้า-หลัง (นำเข้าสอบ)</span>
             </button>
             <button
               onClick={() => {
